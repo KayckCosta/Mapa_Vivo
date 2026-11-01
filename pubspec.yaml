@@ -1,0 +1,28 @@
+name: mapa_vivo
+description: Mapa comunitario com pontos de interesse, avaliacoes e conversa.
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.6.0 <4.0.0"
+
+dependencies:
+  crypto: 3.0.6
+  flutter:
+    sdk: flutter
+  flutter_map: ^8.3.2
+  geolocator: ^14.1.1
+  latlong2: ^0.10.1
+  shared_preferences: 2.5.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+dependency_overrides:
+  # Avoid the objective_c native hook, which fails on Windows paths with spaces.
+  path_provider_foundation: 2.3.2
+
+flutter:
+  uses-material-design: true
