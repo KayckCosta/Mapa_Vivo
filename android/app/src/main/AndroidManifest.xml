@@ -6,9 +6,11 @@
     <application
         android:label="Mapa Vivo"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
+            android:label="Mapa Vivo"
             android:exported="true"
             android:launchMode="singleTop"
             android:taskAffinity=""
