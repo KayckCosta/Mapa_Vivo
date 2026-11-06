@@ -90,6 +90,8 @@ class Place {
   Place({
     required this.name,
     required this.category,
+    this.description = '',
+    this.imageBase64,
     required this.latitude,
     required this.longitude,
     required this.rating,
@@ -99,14 +101,16 @@ class Place {
     required this.ownerId,
   });
 
-  final String name;
-  final String category;
+  String name;
+  String category;
+  String description;
+  String? imageBase64;
   final double latitude;
   final double longitude;
   double rating;
   final List<Review> reviews;
   final List<ChatMessage> messages;
-  final Color color;
+  Color color;
   final String ownerId;
 
   String get emoji {
@@ -127,6 +131,8 @@ class Place {
   Map<String, Object?> toJson() => {
         'name': name,
         'category': category,
+        'description': description,
+        'imageBase64': imageBase64,
         'latitude': latitude,
         'longitude': longitude,
         'rating': rating,
@@ -139,6 +145,8 @@ class Place {
   factory Place.fromJson(Map<String, dynamic> json) => Place(
         name: json['name'] as String,
         category: json['category'] as String,
+        description: json['description'] as String? ?? '',
+        imageBase64: json['imageBase64'] as String?,
         latitude: (json['latitude'] as num).toDouble(),
         longitude: (json['longitude'] as num).toDouble(),
         rating: (json['rating'] as num).toDouble(),
